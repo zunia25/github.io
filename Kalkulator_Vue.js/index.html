@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Vue.js</title>
+    </head>
+    <body>
+        <div id="app">
+        Hasil : {{ hasil }}<br>
+        <input v-model="bil1" type="number">
+        <input v-model="bil2" type="number"><br>
+        <button v-on:click="hasil=parseFloat(bil1)+parseFloat(bil2)">+</button>
+        <button @click="hasil=bil1-bil2">-</button>
+        <button @click="hasil=bil1*bil2">x</button>
+        <button @click="hasil=bil1/bil2">/</button>
+        </div>
+    <script src="http://unpkg.com/vue@3/dist/vue.global.js"></script>     
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return{
+                bil1 : 0,
+                bil2 : 0 ,
+                hasil : 0  
+                }
+                
+             }
+        })
+        app.mount('#app')
+    </script>   
+    </body>
+</html>
